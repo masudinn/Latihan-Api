@@ -8,6 +8,6 @@ class ModelBarang extends Model
 {
 
     protected $table = 'tb_product';
-    protected $primarKey = 'id_product';
-    protected $allowedFiles = ['nama_produk', 'deskripsi_produk'];
+    protected $primaryKey = 'id_produk';
+    protected $allowedFields = ['nama_produk', 'deskripsi_produk'];
 }
