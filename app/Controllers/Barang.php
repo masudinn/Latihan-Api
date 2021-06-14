@@ -37,7 +37,6 @@ class Barang extends ResourceController
             'nama_produk' => $this->request->getPost('nama_produk'),
             'deskripsi_produk' => $this->request->getPost('deskripsi_produk')
         ];
-        $data = json_decode(file_get_contents("php://input"));
         $dataModel->insert($data);
         $response = [
             'status' => 201,
@@ -46,7 +45,7 @@ class Barang extends ResourceController
                 'succes' => 'Data Saved'
             ]
         ];
-        $this->respondCreated($data, 201);
+        return $this->respondCreated($response);
     }
 
     public function update($id = null)
